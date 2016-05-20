@@ -12,7 +12,7 @@ public class AppClass extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        UserManager.init(this);
+        UserClientManager.init(this);
         StreetNeighbourhoodManager.init(this);
     }
 

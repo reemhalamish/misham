@@ -6,7 +6,9 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,6 +20,7 @@ public class StreetNeighbourhoodManager {
     private static StreetNeighbourhoodManager instance;
 
     private Map<String, String> streetToNeighbourhood;
+    private List<String> allStreets;
     private Map<String, String> idToNeighbourhood;
 
 
@@ -27,11 +30,16 @@ public class StreetNeighbourhoodManager {
 
     private StreetNeighbourhoodManager(AppClass app) {
         streetToNeighbourhood = new HashMap<>();
+        allStreets = new ArrayList<>();
         initStreets(app);
 
         idToNeighbourhood = new HashMap<>();
         initNeighbourhoodIds(app);
 
+    }
+
+    public static synchronized StreetNeighbourhoodManager getInstance() {
+        return instance;
     }
 
     private void initNeighbourhoodIds(AppClass app) {
@@ -45,14 +53,18 @@ public class StreetNeighbourhoodManager {
                 String[] parts = str.split(",");
                 if (parts.length != 2)
                     continue;
-                String n_id = parts[0];
-                String neighbourhood = parts[1];
+                String n_id = parts[0].replace("''", "\"");
+                String neighbourhood = parts[1].replace("''", "\"");
                 idToNeighbourhood.put(n_id, neighbourhood);
             }
         } catch (IOException e){
             try {//noinspection ConstantConditions
                 is.close();} catch (IOException | NullPointerException ignore) {}
         }
+    }
+
+    public List<String> getAllStreets() {
+        return allStreets;
     }
 
     private void initStreets(AppClass app) {
@@ -66,14 +78,23 @@ public class StreetNeighbourhoodManager {
                 String[] parts = str.split(",");
                 if (parts.length != 4)
                     continue;
-                String neighbourhood = parts[0];
-                String street = parts[2];
+                String neighbourhood = parts[0].replace("''", "\"");
+                String street = parts[2].replace("''", "\"");
+                if (streetToNeighbourhood.containsKey(street))
+                    continue;
                 streetToNeighbourhood.put(street, neighbourhood);
+                allStreets.add(street);
             }
-        } catch (IOException e){
+        } catch (IOException e) {
             try {//noinspection ConstantConditions
-                is.close();} catch (IOException | NullPointerException ignore) {}
+                is.close();
+            } catch (IOException | NullPointerException ignore) {
+            }
         }
-
     }
+
+    public boolean streetValid(String street) {
+        return streetToNeighbourhood.containsKey(street);
+    }
+
 }

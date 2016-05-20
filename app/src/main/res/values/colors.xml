@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_gray">#f2f2f2</color>
+    <color name="statusbar_main_activity">#9f5d46</color>
+    <color name="statusbar_kalpi_activity_choose">#669949</color>
+    <color name="title_kalpi_activity_choose">#87ca60</color>
+    <color name="statusbar_kalpi_activity_answered">#285474</color>
+    <color name="title_kalpi_activity_answered">#336e98</color>
+    <color name="bg_kalpi">#fcd72b</color>
+
+
+</resources>

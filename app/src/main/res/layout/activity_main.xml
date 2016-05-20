@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:src="@drawable/main_actionbar"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:id="@+id/iv_main_titleimage"
+        />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_main_polls"
+        android:layout_below="@+id/iv_main_titleimage"
+        />
+
+    <!--TODO add a button for city workers-->
+
+</RelativeLayout>

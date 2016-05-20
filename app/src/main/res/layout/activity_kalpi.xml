@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/ll_kalpi_title"
+        android:padding="24dp"
+        android:background="@color/title_kalpi_activity_answered"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="כותרת סעיף"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:id="@+id/tv_kalpi_title"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="פירוט ארוך ארוך כאורך הגלות עם הסבר על השאלה הרלוונטית"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:id="@+id/tv_kalpi_description"
+            android:maxLines="3"
+            android:ellipsize="end"
+            />
+
+
+    </LinearLayout>
+</RelativeLayout>

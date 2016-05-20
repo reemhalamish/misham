@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:background="@color/bg_gray"
+    android:padding="10dp"
+    >
+
+
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/choose"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/iv_row_choose"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:id="@+id/tv_row_title"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/iv_row_choose"
+        android:paddingTop="15dp"
+        android:paddingRight="20dp"
+        android:textColor="@android:color/black"
+        android:ellipsize="end"
+        android:lines="1"
+        android:layout_toRightOf="@+id/iv_row_info"
+        android:gravity="center_vertical|right"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ההצבעה תיסגר בעוד"
+        android:id="@+id/tv_row_time"
+        android:textColor="@android:color/darker_gray"
+        android:layout_below="@+id/tv_row_title"
+        android:layout_toLeftOf="@+id/iv_row_choose"
+        android:paddingRight="25dp"
+        android:paddingTop="5dp"
+
+        android:ellipsize="end"
+        />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/info"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/iv_row_info"
+        android:layout_margin="10dp"
+        />
+</RelativeLayout>

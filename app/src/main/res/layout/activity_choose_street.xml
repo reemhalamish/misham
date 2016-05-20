@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to the blahblahblah of jerusalem blahblahblah"
+        android:id="@+id/tv_choose_welcome"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="119dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To begin, please tell us where do you live"
+        android:id="@+id/tv_choose_where"
+        android:layout_below="@+id/tv_choose_welcome"
+        android:layout_centerHorizontal="true" />
+
+    <AutoCompleteTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/actv_choose_street_input"
+        android:layout_below="@+id/tv_choose_where"
+        android:hint="WHERE DO YOU LEAVE FOR GOD SAKE?!?!?!"
+        android:layout_centerHorizontal="true" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go!"
+        android:id="@+id/btn_choose_go"
+        android:layout_below="@+id/actv_choose_street_input"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

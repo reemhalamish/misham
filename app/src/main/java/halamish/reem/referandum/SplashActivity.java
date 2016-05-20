@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Window;
 
 /**
  * Created by Re'em on 5/19/2016.
@@ -16,7 +17,11 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        createIntentForNextActivity();
+
+        // TODO remove later and un-comment the later
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
+//        createIntentForNextActivity();
     }
 
     private void createIntentForNextActivity() {
@@ -24,7 +29,7 @@ public class SplashActivity extends Activity {
             @Override
             public void run() {
                 Intent goNext;
-                if (UserManager.getManager().isUserRegistered())
+                if (UserClientManager.getManager().isUserRegistered())
                     goNext = new Intent(SplashActivity.this, MainActivity.class);
                 else
                     goNext = new Intent(SplashActivity.this, ChooseStreetActivity.class);
